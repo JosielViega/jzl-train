@@ -97,6 +97,11 @@ Bloqueante para o fluxo atual porque não existe plan.finished para aprovação.
 Observação:
 A causa ainda não foi atribuída ao JZL, OpenClaude, LM Studio ou modelo.
 
+Nota:
+Uma segunda tentativa foi executada com LM Studio explicitamente configurado
+no ambiente do processo e também atingiu o timeout de 300 segundos. Isso reduz
+a força da hipótese de que a ausência das variáveis de provider era a causa.
+
 ## OBS-008
 
 Tipo: ATRITO
@@ -107,3 +112,28 @@ o Host permaneceu sem indicação intermediária até o timeout.
 
 Impacto:
 Dificulta distinguir processamento lento de travamento.
+
+## OBS-009
+
+Tipo: ACERTO
+
+Descrição:
+A segunda falha de planning também ocorreu de forma fail-closed. O novo evento
+mission.plan.unavailable foi persistido sem alterar State da Mission ou arquivos
+da aplicação.
+
+## OBS-010
+
+Tipo: ATRITO
+
+Descrição:
+O modelo qwen3.5-9b mostrou-se inadequado até aqui para mission-planning no
+fluxo agentic real, pois duas execuções atingiram o limite de 300 segundos.
+
+Observação:
+Ainda não é possível afirmar se a demora ocorre por raciocínio, tool-use,
+quantidade de turns ou outra interação interna do OpenClaude.
+
+Ação:
+Testar um modelo menor somente para a responsabilidade mission-planning,
+usando o Model Router existente.

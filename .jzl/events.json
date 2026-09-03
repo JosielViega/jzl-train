@@ -11,6 +11,17 @@
       },
       "id": "event-000001",
       "occurredAt": "2026-09-03T13:23:28.860Z"
+    },
+    {
+      "type": "mission.plan.unavailable",
+      "missionId": "mission-0001",
+      "data": {
+        "sessionId": null,
+        "model": "qwen3.5-9b",
+        "errorMessage": "tempo limite da sessão mission-planning excedido"
+      },
+      "id": "event-000002",
+      "occurredAt": "2026-09-03T18:02:40.551Z"
     }
   ]
 }
