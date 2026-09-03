@@ -1,3 +1,60 @@
 {
-  "schemaVersion": 1
+  "schemaVersion": 1,
+  "missions": [
+    {
+      "id": "mission-0001",
+      "title": "Criar shell inicial da interface",
+      "objective": "Criar o shell visual inicial do JZL Train em HTML e CSS, usando docs/PRODUCT_BRIEF.md como referência. A página deve estabelecer a identidade visual escura, compacta e funcional do produto, com o nome JZL Train e uma navegação visual inicial contendo Treino, Fichas e Histórico. Esta Mission não deve implementar comportamento, JavaScript, PHP, banco de dados, autenticação ou funcionalidades de treino. A solução deve ser mínima e servir apenas como base visual para as próximas Missions.",
+      "status": "pending",
+      "dependencies": [],
+      "acceptanceCriteria": [
+        {
+          "id": "criterion-0001",
+          "type": "file-exists",
+          "path": "public/index.html"
+        },
+        {
+          "id": "criterion-0002",
+          "type": "file-exists",
+          "path": "public/assets/css/app.css"
+        },
+        {
+          "id": "criterion-0003",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "<title>JZL Train</title>"
+        },
+        {
+          "id": "criterion-0004",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "assets/css/app.css"
+        },
+        {
+          "id": "criterion-0005",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "Treino"
+        },
+        {
+          "id": "criterion-0006",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "Fichas"
+        },
+        {
+          "id": "criterion-0007",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "Histórico"
+        }
+      ],
+      "changeScope": {
+        "allowedPaths": [
+          "public/index.html",
+          "public/assets/css/app.css"
+        ]
+      }
+    }
+  ]
 }

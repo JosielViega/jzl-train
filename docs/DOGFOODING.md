@@ -37,6 +37,8 @@ antes da execução do PowerShell e exigiu execução elevada.
 Observação:
 O problema ocorreu antes de o JZL OpenClaude ser executado.
 
+Nota: "setup refresh had errors" ocorreu novamente nesta etapa.
+
 ## OBS-003
 
 Tipo: ATRITO
@@ -67,3 +69,41 @@ Ainda não bloqueia enquanto não existirem arquivos PHP first-party.
 
 Ação:
 Somente registrar nesta etapa. Não alterar o JZL OpenClaude.
+
+## OBS-006
+
+Tipo: ACERTO
+
+Descrição:
+Na primeira falha real de mission-planning, o JZL registrou
+mission.plan.unavailable, manteve a Mission pending e não permitiu alteração
+dos arquivos da aplicação.
+
+Impacto:
+O workflow falhou fechado sem corromper State ou aplicação.
+
+## OBS-007
+
+Tipo: BUG
+
+Descrição:
+A primeira execução real de mission-planning não concluiu dentro do limite
+de 300 segundos e terminou com:
+"tempo limite da sessão mission-planning excedido".
+
+Impacto:
+Bloqueante para o fluxo atual porque não existe plan.finished para aprovação.
+
+Observação:
+A causa ainda não foi atribuída ao JZL, OpenClaude, LM Studio ou modelo.
+
+## OBS-008
+
+Tipo: ATRITO
+
+Descrição:
+Durante mission-planning não existe feedback de progresso visível no CLI;
+o Host permaneceu sem indicação intermediária até o timeout.
+
+Impacto:
+Dificulta distinguir processamento lento de travamento.
