@@ -2,5 +2,10 @@
   "schemaVersion": 1,
   "template": "traditional-web",
   "standardsProfile": "traditional-web-v4",
-  "tools": {}
+  "tools": {},
+  "models": {
+    "mission-planning": "qwen3.5-9b",
+    "mission-execution": "qwen3.5-9b",
+    "mission-review": "qwen3.5-9b"
+  }
 }
