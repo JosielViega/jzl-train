@@ -137,3 +137,31 @@ quantidade de turns ou outra interação interna do OpenClaude.
 Ação:
 Testar um modelo menor somente para a responsabilidade mission-planning,
 usando o Model Router existente.
+
+Nota posterior:
+O modelo qwen3-4b-instruct-2507 também atingiu o mesmo timeout de 300 segundos.
+Portanto, a evidência deixou de apontar para um problema específico do
+qwen3.5-9b.
+
+## OBS-011
+
+Tipo: BUG
+
+Descrição:
+Mission planning atingiu o mesmo timeout com dois modelos diferentes:
+qwen3.5-9b e qwen3-4b-instruct-2507.
+
+As duas rotas utilizaram LM Studio explicitamente configurado no processo.
+
+Impacto:
+Planning continua bloqueado para uso real.
+
+Observação:
+A infraestrutura básica LM Studio → OpenClaude funciona em consulta mínima.
+A evidência atual aponta para o caminho agentic/integrado de planning,
+sem ainda provar qual mecanismo interno provoca o bloqueio.
+
+Ação:
+Corrigir uma diferença concreta encontrada na integração:
+o JZL autoriza ferramentas via canUseTool, mas não restringe o conjunto de
+ferramentas apresentado ao modelo através de disallowedTools do SDK.

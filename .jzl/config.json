@@ -4,7 +4,7 @@
   "standardsProfile": "traditional-web-v4",
   "tools": {},
   "models": {
-    "mission-planning": "qwen3.5-9b",
+    "mission-planning": "qwen3-4b-instruct-2507",
     "mission-execution": "qwen3.5-9b",
     "mission-review": "qwen3.5-9b"
   }
