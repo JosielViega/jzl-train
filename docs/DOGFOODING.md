@@ -165,3 +165,43 @@ Ação:
 Corrigir uma diferença concreta encontrada na integração:
 o JZL autoriza ferramentas via canUseTool, mas não restringe o conjunto de
 ferramentas apresentado ao modelo através de disallowedTools do SDK.
+
+Nota posterior:
+Após a correção do JZL OpenClaude que passou disallowedTools ao SDK,
+mission-planning foi executado novamente com qwen3-4b-instruct-2507 e também
+atingiu o timeout de 300 segundos.
+
+A correção de visibilidade continua válida, mas não resolveu o bloqueio.
+
+## OBS-012
+
+Tipo: ACERTO
+
+Descrição:
+A correção de visibilidade de ferramentas foi aplicada sem ampliar permissões,
+mas o reteste demonstrou que ela não era suficiente para resolver o timeout.
+
+Resultado:
+O dogfooding evitou considerar uma hipótese como causa definitiva sem reteste
+real.
+
+## OBS-013
+
+Tipo: BUG
+
+Descrição:
+Mission planning continua sem concluir mesmo após:
+
+- dois modelos diferentes;
+- LM Studio validado;
+- OpenClaude mínimo validado;
+- provider explícito;
+- redução do tool pool apresentado ao modelo.
+
+Impacto:
+Planning permanece bloqueado.
+
+Ação:
+Executar diagnóstico curto do SDK com o mesmo prompt e as mesmas QueryOptions
+de produção, registrando somente tipos de mensagens, ferramentas solicitadas e
+decisões de canUseTool.
