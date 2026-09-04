@@ -342,3 +342,35 @@ Ação:
 Não alterar modelo nem timeout com apenas uma amostra.
 Observar o comportamento nas próximas Missions reais.
 Se o padrão se repetir, reavaliar a adequação do modelo para mission-execution.
+
+## OBS-020
+
+Tipo: BUG
+
+Descrição:
+O primeiro planning da mission-0002 iniciou uma sessão OpenClaude válida, mas
+não produziu result/success antes do timeout interno de 300 segundos.
+
+Dados:
+
+- Mission: mission-0002
+- responsabilidade: mission-planning
+- modelo: qwen3-4b-instruct-2507
+- duração: aproximadamente 300,83 segundos
+- sessionId: c6cc895e-fbd5-4dd5-8158-2fc87e592af0
+- erro: tempo limite da sessão mission-planning excedido
+
+Distinção importante:
+Este comportamento é diferente do falso timeout de lifecycle observado na
+mission-0001.
+
+Após ada96e9, o worker encerra corretamente.
+Neste caso o próprio limite da Query foi alcançado e o sessionId foi preservado.
+
+Impacto:
+mission-0002 permanece pending e sem plano.
+
+Ação:
+Não aumentar timeout nem trocar modelo ainda.
+Executar diagnóstico curto da Query real para observar mensagens e chamadas de
+Read/Glob/Grep antes do limite.
