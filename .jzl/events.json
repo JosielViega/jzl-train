@@ -530,6 +530,17 @@
       },
       "id": "event-000019",
       "occurredAt": "2026-09-04T17:58:14.595Z"
+    },
+    {
+      "type": "mission.review.unavailable",
+      "missionId": "mission-0002",
+      "data": {
+        "sessionId": "5cb2dc9c-76b4-46a9-b96f-2d38668008b8",
+        "model": "qwen3.5-9b",
+        "errorMessage": "tempo limite da sessão mission-review excedido"
+      },
+      "id": "event-000020",
+      "occurredAt": "2026-09-04T18:08:13.413Z"
     }
   ]
 }
