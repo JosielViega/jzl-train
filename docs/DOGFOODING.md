@@ -205,3 +205,47 @@ Ação:
 Executar diagnóstico curto do SDK com o mesmo prompt e as mesmas QueryOptions
 de produção, registrando somente tipos de mensagens, ferramentas solicitadas e
 decisões de canUseTool.
+
+## OBS-014
+
+Tipo: BUG
+
+Descrição:
+O diagnóstico direto com o mesmo prompt, modelo, canUseTool e disallowedTools
+de produção comprovou que o SDK OpenClaude concluiu mission-planning com
+result/success em aproximadamente 43,9 segundos.
+
+Após o resultado, execution.close() foi chamado, porém o processo Node permaneceu
+ativo até ser encerrado externamente aos 75 segundos.
+
+Causa identificada no JZL:
+o worker é single-shot, mas o Execution Adapter espera o processo filho emitir
+close antes de consumir a resposta. Como o processo permanece vivo após o
+resultado do SDK, o watchdog de aproximadamente 305 segundos encerra o worker
+e transforma uma execução já concluída em timeout.
+
+Impacto:
+mission-planning retorna falsamente
+"tempo limite da sessão mission-planning excedido".
+
+Ação:
+corrigir somente o ciclo de vida do worker para que, depois de o resultado ou
+erro final ser serializado e o stdout/stderr ser descarregado, o processo
+single-shot seja encerrado explicitamente.
+
+## OBS-015
+
+Tipo: ATRITO
+
+Descrição:
+Durante o diagnóstico o SDK emitiu:
+
+agent_load_failure:
+"injectAgents: item at index 1 - agent references unknown tool 'Edit'"
+
+A Query continuou normalmente e retornou result/success.
+
+Observação:
+O comportamento surgiu após a restrição de visibilidade por disallowedTools.
+Não é bloqueante para mission-planning neste momento e não será corrigido
+junto com o problema de lifecycle.
