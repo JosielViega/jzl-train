@@ -476,6 +476,28 @@
       },
       "id": "event-000016",
       "occurredAt": "2026-09-04T17:27:25.026Z"
+    },
+    {
+      "type": "mission.review.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "sessionId": "e9f32deb-fc1b-4961-b9c1-e279bc2025f5",
+        "model": "qwen3.5-9b",
+        "verdict": "CONCERNS",
+        "summary": "A Mission está implementada com os critérios de aceitação atendidos, porém existe uma inconsistência: a seção inicial padrão deve ser 'Treino', mas o HTML atual tem 'fichas' como ativa. O app.js já define corretamente setActiveSection('treino'), mas o estado inicial do HTML contradiz isso.",
+        "findings": [
+          {
+            "severity": "MEDIUM",
+            "title": "Estado inicial incorreto no HTML",
+            "detail": "A seção Treino deve ser a inicial padrão (critério da Mission). No HTML atual, a seção 'fichas' tem class='active' em vez de class='hidden', enquanto Treino tem class='hidden'. Isso contradiz o requisito 'Treino deve ser a secao inicial padrao'. O app.js corrige isso ao rodar setActiveSection('treino'), mas o estado inicial visual está incorreto.",
+            "paths": [
+              "public/index.html"
+            ]
+          }
+        ]
+      },
+      "id": "event-000017",
+      "occurredAt": "2026-09-04T17:47:31.268Z"
     }
   ]
 }
