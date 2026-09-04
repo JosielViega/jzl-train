@@ -415,3 +415,39 @@ Conclusões:
 Próxima ação:
 observar somente a fronteira HTTP entre OpenClaude e LM Studio usando proxy
 local temporário, sem alterar produção.
+
+## OBS-022
+
+Tipo: ATRITO
+
+Descrição:
+O ambiente local apresentou forte interferência quando
+qwen3-4b-instruct-2507 e qwen3.5-9b permaneceram carregados simultaneamente
+no LM Studio.
+
+Evidência isolada:
+Com ambos carregados, um request mínimo direto ao 4B iniciou o stream mas não
+terminou em 30 segundos.
+
+Sem recarregar o 4B, após descarregar somente o 9B, o mesmo request terminou em
+aproximadamente 0,21 segundos.
+
+A VRAM reportada pelo nvidia-smi caiu apenas aproximadamente 2 MiB, portanto a
+evidência não permite atribuir o mecanismo especificamente a esgotamento de
+VRAM.
+
+Reteste integrado:
+O planning real da mission-0002 foi então executado com somente o modelo 4B
+carregado.
+
+Duração: 22,754978 segundos.
+Resultado: sucesso, exit code 0, event-000011 (mission.plan.finished).
+SessionId: a113d73f-537b-4d40-b109-16982800d4ba.
+Modelo: qwen3-4b-instruct-2507.
+A Mission permaneceu pending, com plano presente, sem aprovação e sem execução.
+
+Decisão operacional provisória:
+Enquanto não houver necessidade concreta de automatizar isso, manter carregado
+somente o modelo da responsabilidade em execução.
+
+Não alterar JZL OpenClaude por este motivo.

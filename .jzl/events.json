@@ -343,6 +343,52 @@
       },
       "id": "event-000010",
       "occurredAt": "2026-09-04T13:03:11.736Z"
+    },
+    {
+      "type": "mission.plan.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "sessionId": "a113d73f-537b-4d40-b109-16982800d4ba",
+        "model": "qwen3-4b-instruct-2507",
+        "summary": "Planejamento para ativar navegação funcional entre as seções Treino, Fichas e Historico usando JavaScript simples sem frameworks, respeitando o escopo definido e os critérios de aceitação.",
+        "steps": [
+          {
+            "title": "Verificar presença do arquivo app.js",
+            "detail": "Confirmar que o arquivo public/assets/js/app.js existe no projeto para garantir a implementação do JavaScript funcional.",
+            "paths": [
+              "public/assets/js/app.js"
+            ]
+          },
+          {
+            "title": "Verificar conteúdo da index.html para links de seção",
+            "detail": "Verificar se as seções Treino, Fichas e Historico estão presentes nos links no arquivo public/index.html com os atributos href=\"#treino\", href=\"#fichas\" e href=\"#historico\".",
+            "paths": [
+              "public/index.html"
+            ]
+          },
+          {
+            "title": "Validar presença de eventos e manipulação de classes em app.js",
+            "detail": "Confirmar que o arquivo app.js contém os trechos 'addEventListener' e 'classList', conforme definido nos critérios, para garantir a funcionalidade da navegação.",
+            "paths": [
+              "public/assets/js/app.js"
+            ]
+          }
+        ],
+        "risks": [
+          "Se os links de seção já estiverem presentes em index.html mas não funcionarem, pode haver problemas com o JavaScript ou seletores CSS que precisam ser revisados."
+        ],
+        "validation": [
+          "criterion-0001: arquivo public/assets/js/app.js deve existir",
+          "criterion-0002: texto 'assets/js/app.js' deve estar presente em public/index.html",
+          "criterion-0003: link href=\"#treino\" deve estar presente em public/index.html",
+          "criterion-0004: link href=\"#fichas\" deve estar presente em public/index.html",
+          "criterion-0005: link href=\"#historico\" deve estar presente em public/index.html",
+          "criterion-0006: 'addEventListener' deve estar presente em app.js",
+          "criterion-0007: 'classList' deve estar presente em app.js"
+        ]
+      },
+      "id": "event-000011",
+      "occurredAt": "2026-09-04T16:51:25.009Z"
     }
   ]
 }
