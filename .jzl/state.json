@@ -55,6 +55,65 @@
           "public/assets/css/app.css"
         ]
       }
+    },
+    {
+      "id": "mission-0002",
+      "title": "Ativar navegacao do shell",
+      "objective": "Transformar a navegacao visual existente do JZL Train em uma navegacao funcional entre as secoes Treino, Fichas e Historico usando JavaScript simples, sem frameworks. Ao selecionar uma aba, somente a secao correspondente deve permanecer visivel e a navegacao deve indicar visualmente qual aba esta ativa. Treino deve ser a secao inicial padrao. Preserve o visual escuro, compacto, funcional, azul, branco e preto definido no shell atual. Esta Mission nao deve implementar funcionalidades de treino, formularios, persistencia, PHP, banco de dados, autenticacao ou novas areas do produto.",
+      "status": "pending",
+      "dependencies": [
+        "mission-0001"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "criterion-0001",
+          "type": "file-exists",
+          "path": "public/assets/js/app.js"
+        },
+        {
+          "id": "criterion-0002",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "assets/js/app.js"
+        },
+        {
+          "id": "criterion-0003",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "href=\"#treino\""
+        },
+        {
+          "id": "criterion-0004",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "href=\"#fichas\""
+        },
+        {
+          "id": "criterion-0005",
+          "type": "file-contains",
+          "path": "public/index.html",
+          "text": "href=\"#historico\""
+        },
+        {
+          "id": "criterion-0006",
+          "type": "file-contains",
+          "path": "public/assets/js/app.js",
+          "text": "addEventListener"
+        },
+        {
+          "id": "criterion-0007",
+          "type": "file-contains",
+          "path": "public/assets/js/app.js",
+          "text": "classList"
+        }
+      ],
+      "changeScope": {
+        "allowedPaths": [
+          "public/index.html",
+          "public/assets/css/app.css",
+          "public/assets/js/app.js"
+        ]
+      }
     }
   ]
 }
