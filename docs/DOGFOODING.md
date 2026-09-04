@@ -374,3 +374,44 @@ Ação:
 Não aumentar timeout nem trocar modelo ainda.
 Executar diagnóstico curto da Query real para observar mensagens e chamadas de
 Read/Glob/Grep antes do limite.
+
+## OBS-021
+
+Tipo: BUG
+
+Descrição:
+O diagnóstico direto da Query real da mission-0002 foi abortado
+deliberadamente após 90 segundos sem produzir assistant completo,
+tool_use ou result/success.
+
+Dados:
+
+- modelo: qwen3-4b-instruct-2507
+- sessionId: 7d9d6241-e580-45f8-8288-071a498cd915
+- system/init: aproximadamente 1,63 s
+- abort: aproximadamente 90,63 s
+- nenhuma chamada Read/Glob/Grep
+- após o abort: user e result/error_during_execution
+- nenhum arquivo alterado
+
+Classificação:
+A — bloqueio antes ou durante a geração do provider.
+
+Observação importante:
+O SDK pinned 0.29.1 não produz eventos token-a-token para esta integração
+porque o JZL não habilita includePartialMessages.
+
+Portanto, a ausência de uma mensagem assistant antes do abort não permite
+concluir se o LM Studio recebeu a requisição, se começou a responder ou se
+OpenClaude estava aguardando uma resposta completa.
+
+Conclusões:
+
+- canUseTool não participou do bloqueio;
+- a hipótese de Read relativo não foi reproduzida;
+- o bug anterior de lifecycle não explica este caso;
+- agent_load_failure continua não bloqueante e separado deste diagnóstico.
+
+Próxima ação:
+observar somente a fronteira HTTP entre OpenClaude e LM Studio usando proxy
+local temporário, sem alterar produção.
