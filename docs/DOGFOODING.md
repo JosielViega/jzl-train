@@ -296,3 +296,49 @@ aplicada no JZL OpenClaude e o reteste real confirmou a resolução.
 Observação:
 A correção anterior de disallowedTools permaneceu ativa. O agent_load_failure
 já registrado continua fora do escopo porque não impediu o planejamento.
+
+## OBS-018
+
+Tipo: ACERTO
+
+Descrição:
+A primeira Mission real do JZL Train completou o ciclo completo controlado pelo
+JZL:
+
+planning
+→ aprovação explícita do plano
+→ execution
+→ review independente
+→ validation determinística
+→ completed
+
+Resultado:
+
+- review: PASS
+- findings: []
+- validation: PASS
+- 13 validators PASS
+- Mission final: completed
+
+A validação determinística levou aproximadamente 0,16 segundos e não iniciou
+sessão de modelo.
+
+Observação:
+Isso confirma na prática a separação entre geração probabilística e autoridade
+determinística do JZL.
+
+## OBS-019
+
+Tipo: ATRITO
+
+Descrição:
+A execução da mission-0001 com qwen3.5-9b levou aproximadamente 553,8 segundos,
+próximo do timeout configurado de 600 segundos para mission-execution.
+
+Impacto:
+Nenhuma falha ocorreu nesta Mission, mas há pouca margem operacional.
+
+Ação:
+Não alterar modelo nem timeout com apenas uma amostra.
+Observar o comportamento nas próximas Missions reais.
+Se o padrão se repetir, reavaliar a adequação do modelo para mission-execution.

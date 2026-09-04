@@ -143,6 +143,195 @@
       },
       "id": "event-000008",
       "occurredAt": "2026-09-04T12:33:54.927Z"
+    },
+    {
+      "type": "mission.validation.finished",
+      "missionId": "mission-0001",
+      "data": {
+        "outcome": "PASS",
+        "fromStatus": "validation",
+        "toStatus": "completed",
+        "results": [
+          {
+            "id": "mission-change-scope",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "scopeType": "allowed-paths",
+              "violations": []
+            }
+          },
+          {
+            "id": "criterion-0001",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-exists",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0002",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-exists",
+              "path": "public/assets/css/app.css",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0003",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-contains",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0004",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-contains",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0005",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-contains",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0006",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-contains",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "criterion-0007",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "criterionType": "file-contains",
+              "path": "public/index.html",
+              "satisfied": true
+            }
+          },
+          {
+            "id": "traditional-web:structure",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "standardType": "structure",
+              "issues": []
+            }
+          },
+          {
+            "id": "traditional-web:public-exposure",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "standardType": "public-exposure",
+              "issues": []
+            }
+          },
+          {
+            "id": "traditional-web:technology-boundary",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "standardType": "technology-boundary",
+              "issues": []
+            }
+          },
+          {
+            "id": "traditional-web:ascii-paths",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "standardType": "ascii-paths",
+              "violations": []
+            }
+          },
+          {
+            "id": "traditional-web:source-text",
+            "status": "PASS",
+            "evidence": {
+              "exitCode": null,
+              "signal": null,
+              "stdout": "",
+              "stderr": "",
+              "errorMessage": null,
+              "standardType": "source-text",
+              "issues": []
+            }
+          }
+        ]
+      },
+      "id": "event-000009",
+      "occurredAt": "2026-09-04T12:41:06.607Z"
     }
   ]
 }
