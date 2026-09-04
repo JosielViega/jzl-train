@@ -130,6 +130,19 @@
       },
       "id": "event-000007",
       "occurredAt": "2026-09-04T12:08:03.683Z"
+    },
+    {
+      "type": "mission.review.finished",
+      "missionId": "mission-0001",
+      "data": {
+        "sessionId": "3abbe67c-9983-4ac9-8059-4e7cfa7577e3",
+        "model": "qwen3.5-9b",
+        "verdict": "PASS",
+        "summary": "Mission completada com sucesso. Todos os critérios de aceitação foram atendidos.",
+        "findings": []
+      },
+      "id": "event-000008",
+      "occurredAt": "2026-09-04T12:33:54.927Z"
     }
   ]
 }
