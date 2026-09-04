@@ -552,6 +552,19 @@
       },
       "id": "event-000021",
       "occurredAt": "2026-09-04T18:24:28.553Z"
+    },
+    {
+      "type": "mission.review.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "sessionId": "1dfdb6ea-b408-42d7-b4b2-62d2c284f785",
+        "model": "qwen3-4b-instruct-2507",
+        "verdict": "PASS",
+        "summary": "A navegacao entre as secoes Treino, Fichas e Historico foi implementada com JavaScript simples sem frameworks. A secao Treino é a inicial padrao e a navegacao indica visualmente qual aba esta ativa usando a classe 'active'. Todos os critérios de aceitação foram atendidos: os links correspondentes foram incluidos no HTML, o script app.js contem eventListener e classList como exigido. O código segue as regras aplicaveis mantendo um design escuro, compacto e funcional.",
+        "findings": []
+      },
+      "id": "event-000022",
+      "occurredAt": "2026-09-04T18:31:24.301Z"
     }
   ]
 }

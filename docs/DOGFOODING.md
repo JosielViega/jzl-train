@@ -451,3 +451,34 @@ Enquanto não houver necessidade concreta de automatizar isso, manter carregado
 somente o modelo da responsabilidade em execução.
 
 Não alterar JZL OpenClaude por este motivo.
+
+## OBS-023
+
+Tipo: ATRITO
+
+Descrição:
+qwen3.5-9b apresentou dois timeouts consecutivos como mission-review,
+ambos no limite interno de aproximadamente 300 segundos, mesmo carregado
+sozinho no LM Studio.
+
+Evidência:
+
+- event-000020
+- event-000021
+- ambos com mission.review.unavailable
+- modelo qwen3.5-9b
+- Mission permaneceu validation
+- nenhum arquivo da aplicação foi alterado
+
+Decisão operacional:
+Alterar somente o model route de mission-review para
+qwen3-4b-instruct-2507 e testar uma única review.
+
+Isso não representa alteração arquitetural do JZL OpenClaude.
+
+Resultado real da review com o 4B:
+
+- duração: aproximadamente 159,44 segundos
+- event ID: event-000022
+- verdict: PASS
+- sessionId: 1dfdb6ea-b408-42d7-b4b2-62d2c284f785
