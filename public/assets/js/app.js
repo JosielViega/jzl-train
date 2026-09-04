@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Definir Treino como seção inicial padrão
     setActiveSection('treino');
+
+    // Adicionar event listeners para cada link de navegação
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            setActiveSection(targetId);
+        });
+    });
+
+    // Fechar modal se estiver aberto
+    closeModal();
 });
 
 function setActiveSection(sectionId) {

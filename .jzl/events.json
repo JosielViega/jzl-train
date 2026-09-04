@@ -595,6 +595,38 @@
       },
       "id": "event-000023",
       "occurredAt": "2026-09-04T18:41:41.101Z"
+    },
+    {
+      "type": "mission.review.correction.requested",
+      "missionId": "mission-0002",
+      "data": {
+        "reviewEventId": "event-000023",
+        "fromStatus": "validation",
+        "toStatus": "correction"
+      },
+      "id": "event-000024",
+      "occurredAt": "2026-09-04T18:46:51.024Z"
+    },
+    {
+      "type": "mission.execution.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "outcome": "SUCCESS",
+        "fromStatus": "correction",
+        "toStatus": "validation",
+        "sessionId": "b8063541-5b69-4739-a71c-8bd03fc62ac6",
+        "model": "qwen3.5-9b",
+        "result": "Concluí a implementação da navegação funcional. Aqui está o resumo das alterações:\n\n**Alteração realizada em `public/assets/js/app.js`:**\n\nAdicionei event listeners aos links de navegação que acionam a função `setActiveSection()` ao clicar em cada link. O código agora:\n- Previne o comportamento padrão do clique (prevenindo recarregamento da página)\n- Extrai o ID da seção alvo da href\n- Chama `setActiveSection()` para alternar as seções\n\nA navegação entre as abas **Treino**, **Fichas** e **Histórico** agora funciona corretamente, com **Treino** como a seção inicial padrão.",
+        "changeSet": {
+          "created": [],
+          "modified": [
+            "public/assets/js/app.js"
+          ],
+          "deleted": []
+        }
+      },
+      "id": "event-000025",
+      "occurredAt": "2026-09-04T18:50:15.678Z"
     }
   ]
 }
