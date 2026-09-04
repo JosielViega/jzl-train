@@ -99,6 +99,37 @@
       },
       "id": "event-000005",
       "occurredAt": "2026-09-04T11:35:04.985Z"
+    },
+    {
+      "type": "mission.plan.approved",
+      "missionId": "mission-0001",
+      "data": {
+        "planEventId": "event-000005"
+      },
+      "id": "event-000006",
+      "occurredAt": "2026-09-04T11:58:10.144Z"
+    },
+    {
+      "type": "mission.execution.finished",
+      "missionId": "mission-0001",
+      "data": {
+        "outcome": "SUCCESS",
+        "fromStatus": "pending",
+        "toStatus": "validation",
+        "sessionId": "332af6cb-c556-47a4-97bd-54166f4954d3",
+        "model": "qwen3.5-9b",
+        "result": "Mission concluída. Criei o shell visual inicial do JZL Train com os seguintes arquivos:\n\n**Arquivos criados:**\n\n1. `public/index.html` — Shell HTML com:\n   - Título \"JZL Train\" no `<title>` tag\n   - Link para `assets/css/app.css`\n   - Navegação com links: Treino, Fichas e Histórico\n   - Seções correspondentes com classes para controle visual\n\n2. `public/assets/css/app.css` — Estilos visuais escuros com:\n   - Identidade compacta e funcional (tema escuro)\n   - Azul, branco e preto conforme brief\n   - Layout com header, main e footer\n   - Navegação horizontal com links interativos\n\nAmbos os arquivos seguem a estrutura traditional-web canônica do projeto.",
+        "changeSet": {
+          "created": [
+            "public/assets/css/app.css",
+            "public/index.html"
+          ],
+          "modified": [],
+          "deleted": []
+        }
+      },
+      "id": "event-000007",
+      "occurredAt": "2026-09-04T12:08:03.683Z"
     }
   ]
 }

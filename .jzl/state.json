@@ -5,7 +5,7 @@
       "id": "mission-0001",
       "title": "Criar shell inicial da interface",
       "objective": "Criar o shell visual inicial do JZL Train em HTML e CSS, usando docs/PRODUCT_BRIEF.md como referência. A página deve estabelecer a identidade visual escura, compacta e funcional do produto, com o nome JZL Train e uma navegação visual inicial contendo Treino, Fichas e Histórico. Esta Mission não deve implementar comportamento, JavaScript, PHP, banco de dados, autenticação ou funcionalidades de treino. A solução deve ser mínima e servir apenas como base visual para as próximas Missions.",
-      "status": "pending",
+      "status": "validation",
       "dependencies": [],
       "acceptanceCriteria": [
         {
