@@ -444,6 +444,38 @@
       },
       "id": "event-000014",
       "occurredAt": "2026-09-04T17:12:14.754Z"
+    },
+    {
+      "type": "mission.review.correction.requested",
+      "missionId": "mission-0002",
+      "data": {
+        "reviewEventId": "event-000014",
+        "fromStatus": "validation",
+        "toStatus": "correction"
+      },
+      "id": "event-000015",
+      "occurredAt": "2026-09-04T17:24:59.331Z"
+    },
+    {
+      "type": "mission.execution.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "outcome": "SUCCESS",
+        "fromStatus": "correction",
+        "toStatus": "validation",
+        "sessionId": "a7965f73-b585-4b33-bfbf-d3856f3a3d82",
+        "model": "qwen3.5-9b",
+        "result": "Concluído. Resumo das alterações realizadas:\n\n**Arquivo modificado:** `public/index.html`\n\n**Alteração:** Substituí os comentários de script por uma tag `<script src=\"assets/js/app.js\"></script>` funcional que carrega o arquivo JavaScript existente.\n\nO arquivo `app.js` já contém toda a lógica necessária (`addEventListener`, `classList`, funções de navegação). Todos os 7 critérios do JZL são atendidos após esta alteração única.",
+        "changeSet": {
+          "created": [],
+          "modified": [
+            "public/index.html"
+          ],
+          "deleted": []
+        }
+      },
+      "id": "event-000016",
+      "occurredAt": "2026-09-04T17:27:25.026Z"
     }
   ]
 }
