@@ -498,6 +498,38 @@
       },
       "id": "event-000017",
       "occurredAt": "2026-09-04T17:47:31.268Z"
+    },
+    {
+      "type": "mission.review.correction.requested",
+      "missionId": "mission-0002",
+      "data": {
+        "reviewEventId": "event-000017",
+        "fromStatus": "validation",
+        "toStatus": "correction"
+      },
+      "id": "event-000018",
+      "occurredAt": "2026-09-04T17:56:18.282Z"
+    },
+    {
+      "type": "mission.execution.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "outcome": "SUCCESS",
+        "fromStatus": "correction",
+        "toStatus": "validation",
+        "sessionId": "bb250185-4716-4320-a8a4-3bfadf087be3",
+        "model": "qwen3.5-9b",
+        "result": "Done. Alterações realizadas:\n\n**Correção do estado inicial no `public/index.html`:**\n\n1. Seção `#treino` agora tem `class=\"active\"` (antes `hidden`) - torna-se a seção visível inicialmente\n2. Seção `#fichas` agora tem `class=\"hidden\"` (antes `active`) - torna-se oculta inicialmente\n\nO arquivo `public/assets/js/app.js` já existia com:\n- `addEventListener('DOMContentLoaded', ...)` no critério 0006 ✓\n- Uso de `classList.add/remove('active')` no critério 0007 ✓\n- Chamada de `setActiveSection('treino')` como inicial padrão\n\nTodos os critérios de aceitação estão satisfeitos:\n- Os links de navegação já possuem `href=\"#treino\"`, `href=\"#fichas\"` e `href=\"#historico\"`\n- O arquivo JavaScript existe na rota correta",
+        "changeSet": {
+          "created": [],
+          "modified": [
+            "public/index.html"
+          ],
+          "deleted": []
+        }
+      },
+      "id": "event-000019",
+      "occurredAt": "2026-09-04T17:58:14.595Z"
     }
   ]
 }
