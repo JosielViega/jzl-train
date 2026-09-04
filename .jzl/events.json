@@ -421,6 +421,29 @@
       },
       "id": "event-000013",
       "occurredAt": "2026-09-04T17:03:40.131Z"
+    },
+    {
+      "type": "mission.review.finished",
+      "missionId": "mission-0002",
+      "data": {
+        "sessionId": "e127dfb2-1da4-4c65-9c6f-835e204588f0",
+        "model": "qwen3.5-9b",
+        "verdict": "CONCERNS",
+        "summary": "A Mission de navegação funcional requer que app.js seja carregado pelo navegador, mas o index.html não possui uma tag <script> para carregar public/assets/js/app.js. Sem essa referência, a lógica de navegação (addEventListener, setActiveSection) nunca será executada.",
+        "findings": [
+          {
+            "severity": "HIGH",
+            "title": "JavaScript de navegação não é carregado",
+            "detail": "O arquivo public/assets/js/app.js existe e contém a lógica correta com addEventListener('DOMContentLoaded'...) e classList para controle visual da ativação das abas. Porém, o index.html não inclui uma tag <script src=\"assets/js/app.js\">. Isso impede que a navegação funcione porque o navegador nunca executará o código.",
+            "paths": [
+              "public/index.html",
+              "public/assets/js/app.js"
+            ]
+          }
+        ]
+      },
+      "id": "event-000014",
+      "occurredAt": "2026-09-04T17:12:14.754Z"
     }
   ]
 }
