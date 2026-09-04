@@ -482,3 +482,38 @@ Resultado real da review com o 4B:
 - event ID: event-000022
 - verdict: PASS
 - sessionId: 1dfdb6ea-b408-42d7-b4b2-62d2c284f785
+
+## OBS-024
+
+Tipo: ATRITO
+
+Descrição:
+qwen3-4b-instruct-2507 concluiu mission-review da mission-0002 com PASS,
+mas o código atual ainda contém defeitos funcionais objetivos observados
+independentemente.
+
+Evidência:
+
+- event-000022
+- verdict PASS
+- nenhum finding
+- Mission permaneceu validation
+- validation não foi executada
+
+O PASS probabilístico não foi tratado como autorização para completar a
+Mission.
+
+Decisão operacional:
+testar uma única vez qwen3-coder-30b-a3b-instruct como mission-review,
+sem alterar arquitetura, timeout ou aplicação.
+
+Resultado real:
+
+- duração: aproximadamente 196,58 segundos
+- sessionId: 9003920b-eda2-4751-a90b-638a9d1a4220
+- event ID: event-000023
+- verdict: CONCERNS
+- finding HIGH: Missing Event Handler for Navigation Links — o reviewer identificou que os links de navegação não possuem listeners de clique ligados a setActiveSection.
+- finding HIGH: Navigation Functionality Not Implemented — o reviewer concluiu que clicar em Treino, Fichas ou Histórico não altera a seção visível.
+
+Nenhum defeito conhecido foi registrado no prompt da review.

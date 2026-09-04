@@ -6,6 +6,6 @@
   "models": {
     "mission-planning": "qwen3-4b-instruct-2507",
     "mission-execution": "qwen3.5-9b",
-    "mission-review": "qwen3-4b-instruct-2507"
+    "mission-review": "qwen3-coder-30b-a3b-instruct"
   }
 }
