@@ -233,6 +233,15 @@ corrigir somente o ciclo de vida do worker para que, depois de o resultado ou
 erro final ser serializado e o stdout/stderr ser descarregado, o processo
 single-shot seja encerrado explicitamente.
 
+Nota posterior:
+Após a correção do lifecycle no commit
+ada96e922f8b8d200ad4a6b32a555751e099ee84,
+o mesmo mission-planning concluiu normalmente em aproximadamente 61 segundos,
+com exit code 0 e mission.plan.finished.
+
+Isso confirma que o falso timeout era causado pelo lifecycle do worker
+single-shot.
+
 ## OBS-015
 
 Tipo: ATRITO
@@ -249,3 +258,41 @@ Observação:
 O comportamento surgiu após a restrição de visibilidade por disallowedTools.
 Não é bloqueante para mission-planning neste momento e não será corrigido
 junto com o problema de lifecycle.
+
+## OBS-016
+
+Tipo: ACERTO
+
+Descrição:
+A primeira Mission real finalmente concluiu mission-planning através do fluxo
+completo:
+
+JZL
+→ worker
+→ OpenClaude
+→ LM Studio
+→ qwen3-4b-instruct-2507
+→ resultado estruturado
+→ mission.plan.finished
+
+Duração:
+aproximadamente 61 segundos.
+
+Resultado:
+A Mission permaneceu pending, o plano permaneceu sem aprovação e nenhum arquivo
+da aplicação foi criado.
+
+Isso confirma a separação entre planejamento consultivo e autoridade de
+execução.
+
+## OBS-017
+
+Tipo: ACERTO
+
+Descrição:
+O dogfooding identificou e comprovou um bug real de lifecycle, a correção foi
+aplicada no JZL OpenClaude e o reteste real confirmou a resolução.
+
+Observação:
+A correção anterior de disallowedTools permaneceu ativa. O agent_load_failure
+já registrado continua fora do escopo porque não impediu o planejamento.

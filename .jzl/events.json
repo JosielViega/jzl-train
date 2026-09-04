@@ -44,6 +44,61 @@
       },
       "id": "event-000004",
       "occurredAt": "2026-09-03T19:22:31.900Z"
+    },
+    {
+      "type": "mission.plan.finished",
+      "missionId": "mission-0001",
+      "data": {
+        "sessionId": "47e967a1-6dc1-4905-bd60-736c391e1d36",
+        "model": "qwen3-4b-instruct-2507",
+        "summary": "Planejamento para criar o shell visual inicial do JZL Train com HTML e CSS, respeitando os critérios de aceitação e o escopo autorizado.",
+        "steps": [
+          {
+            "title": "Verificar se os arquivos necessários existem",
+            "detail": "Confirme a existência dos arquivos index.html e app.css no caminho público, conforme definido nos critérios de aceitação.",
+            "paths": [
+              "public/index.html",
+              "public/assets/css/app.css"
+            ]
+          },
+          {
+            "title": "Criar o arquivo HTML inicial com estrutura mínima",
+            "detail": "Crie public/index.html com a estrutura básica do projeto, incluindo o título JZL Train e uma seção de navegação com os links para Treino, Fichas e Histórico.",
+            "paths": [
+              "public/index.html"
+            ]
+          },
+          {
+            "title": "Criar o arquivo CSS inicial com estilos visuais escuros",
+            "detail": "Crie public/assets/css/app.css com estilos básicos para definir uma identidade visual escura, compacta e funcional, sem implementar comportamento ou funcionalidades de treino.",
+            "paths": [
+              "public/assets/css/app.css"
+            ]
+          },
+          {
+            "title": "Validar conteúdo dos arquivos criados",
+            "detail": "Verifique que o HTML contém os elementos requeridos: título JZL Train, links para Treino, Fichas e Histórico, e a referência ao CSS app.css.",
+            "paths": [
+              "public/index.html"
+            ]
+          }
+        ],
+        "risks": [
+          "O projeto pode estar ausente ou não ter a estrutura de diretórios esperada (por exemplo, falta de public/). Se isso ocorrer, será necessário criar a estrutura antes de iniciar os arquivos.",
+          "A ausência de uma pasta 'public' poderá exigir a criação do diretorio, mas o escopo proíbe alterações fora dos paths autorizados. Caso necessário, deve-se consultar o usuário."
+        ],
+        "validation": [
+          "criterion-0001: O arquivo public/index.html existe.",
+          "criterion-0002: O arquivo public/assets/css/app.css existe.",
+          "criterion-0003: O título <title>JZL Train</title> está presente em public/index.html.",
+          "criterion-0004: A referência à CSS app.css está presente em public/index.html.",
+          "criterion-0005: O link 'Treino' está presente em public/index.html.",
+          "criterion-0006: O link 'Fichas' está presente em public/index.html.",
+          "criterion-0007: O link 'Histórico' está presente em public/index.html."
+        ]
+      },
+      "id": "event-000005",
+      "occurredAt": "2026-09-04T11:35:04.985Z"
     }
   ]
 }
